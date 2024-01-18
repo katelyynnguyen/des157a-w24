@@ -1,0 +1,49 @@
+body {
+    background-color: #ECECEA;
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+}
+
+header {
+    display: flex;
+    max-width: 1075px;
+}
+
+#category {
+    display: flex;
+    gap: 40px;
+    padding-left: 490px;
+}
+
+#content {
+    padding-left: 100px;
+    display: flex;
+    gap: 50px;
+}
+
+main {
+    display: flex;
+    max-width: 1075px;
+    padding: 0px 62.5px 0px 62.5px;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Abril Fatface', serif;
+}
+ul {
+    list-style-type: none;
+    line-height: 2em;
+    padding-inline-start: 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #231804;
+    max-width: 117px;
+}
+
+.green {
+    background-color: #D4C66D;
+    padding: 50px 10px;
+}
