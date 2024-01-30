@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiement 2</title>
+</head>
+<body>
+    <h1>Experiment 2</h1>
+    <h2>Open the console to interact with this experiment!</h2>
+
+    <style>
+        .cantaloupe {background-color: #f19960;}
+        .strawberry {background-color: #e5ada8;}
+        .matcha {background-color: #809671;}
+        .chocolate {background-color: #725c3f;}
+    </style>
+
+    <script>
+
+        var userFood = prompt("Please enter your favorite food from the list: cantaloupe, strawberry, matcha, chocolate", "")
+
+
+        var foodInput = userFood.toLowerCase(); 
+
+  
+        food = ["cantaloupe", "strawberry", "matcha", "chocolate"];
+
+
+        for (var i=0; i<food.length; i++){
+            if (foodInput == "cantaloupe"){
+                var orange = document.querySelector('body');
+                orange.className = "cantaloupe";
+            } else if (foodInput == "strawberry"){
+                var pink = document.querySelector('body');
+                pink.className = "strawberry";
+            } else if (foodInput == "matcha"){
+                var green = document.querySelector('body');
+                green.className = "matcha";
+            } else if (foodInput == "chocolate"){
+                var brown = document.querySelector('body');
+                brown.className == "chocolate";
+            } else {
+                console.log("Please enter a valid food");
+            }
+        }            
+    
+
+
+    </script>
+</body>
+</html>
