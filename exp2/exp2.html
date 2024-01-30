@@ -14,37 +14,46 @@
         .cantaloupe {background-color: #f19960;}
         .strawberry {background-color: #e5ada8;}
         .matcha {background-color: #809671;}
-        .chocolate {background-color: #725c3f;}
+        .chocolate {background-color: #9b6b43;}
     </style>
 
     <script>
-
-        var userFood = prompt("Please enter your favorite food from the list: cantaloupe, strawberry, matcha, chocolate", "")
-
-
+        //user inputs favorite food and page changes to the color of that food based on their response
+        var userFood = prompt("Would you like a random food?", "")
         var foodInput = userFood.toLowerCase(); 
 
-  
+
         food = ["cantaloupe", "strawberry", "matcha", "chocolate"];
+        function randomFruit (){
+            var rand = Math.floor((4) * Math.random());
+            return food[rand];
+        }
 
-
-        for (var i=0; i<food.length; i++){
+        function foodBackgroundColor (foodInput){
             if (foodInput == "cantaloupe"){
                 var orange = document.querySelector('body');
                 orange.className = "cantaloupe";
+                console.log("You got a cantaloupe!");
             } else if (foodInput == "strawberry"){
                 var pink = document.querySelector('body');
                 pink.className = "strawberry";
+                console.log("You got a strawberry!");
             } else if (foodInput == "matcha"){
                 var green = document.querySelector('body');
                 green.className = "matcha";
+                console.log("You got matcha!");
             } else if (foodInput == "chocolate"){
                 var brown = document.querySelector('body');
                 brown.className == "chocolate";
-            } else {
-                console.log("Please enter a valid food");
+                console.log("You got chocolate!");
             }
-        }            
+        }
+            
+        if (foodInput == "yes"){
+            foodBackgroundColor(randomFruit());
+        } else {
+            console.log("Please try again.");
+        }
     
 
 
