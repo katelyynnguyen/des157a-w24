@@ -14,11 +14,11 @@
         .cantaloupe {background-color: #f19960;}
         .strawberry {background-color: #e5ada8;}
         .matcha {background-color: #809671;}
-        .chocolate {background-color: #9b6b43;}
+        .chocolate {background-color: #725c3f;}
     </style>
 
     <script>
-        //user inputs favorite food and page changes to the color of that food based on their response
+        //user accepts random food, page changes to the color of that food based on their response, and console prints what food they got
         var userFood = prompt("Would you like a random food?", "")
         var foodInput = userFood.toLowerCase(); 
 
@@ -42,11 +42,11 @@
                 var green = document.querySelector('body');
                 green.className = "matcha";
                 console.log("You got matcha!");
-            } else if (foodInput == "chocolate"){
+            } else {
                 var brown = document.querySelector('body');
-                brown.className == "chocolate";
+                brown.className = "chocolate";
                 console.log("You got chocolate!");
-            }
+            } 
         }
             
         if (foodInput == "yes"){
@@ -54,8 +54,6 @@
         } else {
             console.log("Please try again.");
         }
-    
-
 
     </script>
 </body>
