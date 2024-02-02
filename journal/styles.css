@@ -82,12 +82,20 @@ article {
     box-shadow: 10px 10px 20px #231804;
 }
 
-h2 {
+.green {
     text-align: center;
     background-color: #D4C66D;
     padding: 50px;
     border-radius: 20px;
     border-top-left-radius: 150px;
+}
+
+.bluegray {
+    text-align: center;
+    background-color: #BDC3D9;
+    padding: 50px;
+    border-radius: 20px;
+    border-top-right-radius: 150px;
 }
 
 time {
