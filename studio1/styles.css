@@ -1,0 +1,31 @@
+body {
+    background-color: #B3B792;
+    font-family: 'Inika', serif;
+    color: #725C3A;
+    display: flex;
+    font-size: 20px;
+}
+
+header {
+    padding: 20px;
+    width: 350px;
+}
+
+h1 {
+    font-family: 'Londrina Shadow', sans-serif; 
+    font-size: 85px;
+    color: #493d28;
+}
+
+h2 {
+    font-family: 'Londrina Shadow', sans-serif;
+    font-size: 48px;
+}
+
+main {
+    margin-left: 250px;
+}
+
+#recipe {
+
+}
