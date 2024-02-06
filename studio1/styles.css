@@ -3,25 +3,26 @@ body {
     font-family: 'Inika', serif;
     color: #725C3A;
     display: flex;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #container {
     width: 1200px;
-    height: 850px;
+    /* height: 860px; */
     margin: auto;
     background-image: url(images/mad_libs_2.0_design_comp.png);
     background-repeat: no-repeat;
     background-position: center bottom;
+    background-attachment: fixed;
 }
 header {
     padding: 20px;
-    width: 350px;
+    width: 225px;
 }
 
 h1 {
     font-family: 'Londrina Shadow', sans-serif; 
-    font-size: 75px;
+    font-size: 70px;
 }
 
 h2 {
@@ -34,9 +35,9 @@ h2 {
 main {
     /* margin-left: 100px; */
     background-color: #E5E0D8;
-    padding: 20px;
+    padding: 5px 40px 20px;
     margin-top: 20px;
-    height: 450px;
+    /* height: 750px; */
 }   
 
 input[type="text"]:focus {
@@ -49,6 +50,32 @@ label {
     line-height: 1.5em;
 }
 
-input[text="submit"] {
+input {
+    display: block;
+    margin-bottom: 5px;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#recipe {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+#button {
+    margin: auto;
     background-color: #725C3A;
+    color: #E5E0D8;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.75s;
+}
+
+#button:hover {
+    transform: scale(1.25);
+    transition-timing-function: ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
