@@ -58,6 +58,21 @@ input {
     border-radius: 10px;
 }
 
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: showing;
+    opacity: 1;
+}
+
+#overlay {
+    position: absolute;
+    background-color: rgba(179, 183, 146, 0.5);
+}
+
 #recipe {
     display: flex;
     gap: 30px;
