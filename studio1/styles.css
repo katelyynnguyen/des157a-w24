@@ -64,13 +64,60 @@ input {
 }
 
 .showing {
-    visibility: showing;
+    visibility: visible;
     opacity: 1;
 }
 
 #overlay {
     position: absolute;
-    background-color: rgba(179, 183, 146, 0.5);
+    background-color: rgba(179, 183, 146, 0.7);
+    background-image: url(images/bakingsheet.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+#overlay article {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 40vw;
+    height: 52vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#E5E0D8;
+    line-height: 1.5em;
+    font-size: 20px;
+}
+
+#overlay article h2 {
+    padding-bottom: 30px;
+    color:#725C3A;
+}
+
+.close {
+    position: absolute;
+    bottom: 20%;
+    left: 42%;
+    background-color:#E5E0D8;
+    color: #725C3A;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.75s;
+}
+
+.close:hover {
+    transform: scale(1.25);
+    transition-timing-function: ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #recipe {
@@ -93,4 +140,12 @@ input {
     transform: scale(1.25);
     transition-timing-function: ease;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+span {
+    color:#725C3A;
+}
+
+#errorMsg {
+    text-align: center;
 }
