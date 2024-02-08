@@ -4,6 +4,11 @@ body {
     font-weight: 500;
 }
 
+#container {
+    width: 1200px;
+    margin: auto;
+}
+
 header {
     display: flex;
     max-width: 1075px;
