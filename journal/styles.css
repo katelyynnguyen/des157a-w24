@@ -106,6 +106,14 @@ article {
     border-radius: 20px;
 }
 
+.blue {
+    text-align: center;
+    background-color:#C7D8E8;
+    padding: 50px;
+    border-radius: 20px;
+    border-bottom-right-radius: 150px;
+}
+
 time {
     text-align: center;
     display: flex;
