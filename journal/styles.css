@@ -114,6 +114,13 @@ article {
     border-bottom-right-radius: 150px;
 }
 
+.orange {
+    text-align: center;
+    background-color: #CE7134;
+    padding: 50px;
+    border-radius: 60px;
+}
+
 time {
     text-align: center;
     display: flex;
