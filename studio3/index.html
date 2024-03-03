@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@700&family=Merriweather&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>game on!</title>
+    <script src="script.js" defer></script>
+
+</head>
+<body id="container">
+    <header>
+        <h1>lucky 9</h1>
+    </header>
+
+    <main>
+        <section>
+        <p>
+            Each player is dealt 3 cards. The object of the game is beat the dealer with a higher valued hand as close to 9 as possible. Tens and face cards are worth 0 points, aces are worth 1 point, and 2 - 9 are scored at face value. Hands are valued as the last digit of their sum. 
+        </p>
+
+        <p>
+            Note: If you get a hand with 3 face cards, you’ve hit the jackpot and that’s an automatic win. (woohoo!)
+        </p>
+        </section>
+
+        <div id="dCard">
+            <div class="card"></div>  
+            <div class="card"></div>
+            <div class="card"></div> 
+        </div>
+
+        <button>DRAW</button>
+
+        <div id="pCard">
+            <div class="card"></div>  
+            <div class="card"></div>
+            <div class="card"></div> 
+        </div>
+    </main>
+</body>
+</html>
