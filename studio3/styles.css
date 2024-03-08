@@ -51,11 +51,36 @@ section {
     display: flex;
     gap: 25px;
     justify-content: center;
-    margin-top: 40px;
+    /* margin-top: 20px; */
+    position: relative;
+    top: 5px;
 }
 
 #pCard {
     margin-top: 125px;
+}
+
+#dealerHand, #playerHand {
+    display: flex;
+    gap: 25px;
+    /* justify-content: center; */
+    position: absolute;
+    left: 665px;
+    top: 346.5px;
+    z-index: 1;
+}
+
+#playerHand {
+    top: 682.5px;
+}
+
+#dealerScore, #playerScore {
+    display: flex;
+    padding-right: 50px;
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    text-shadow: 2px 2px 10px #272525;
 }
 
 button {
@@ -76,4 +101,79 @@ button {
 button:hover {
     color: #F3F2EE;
     background-color: #223F61;
+}
+
+.tryagain {
+    position: relative;
+    top: 600px;
+    left: 745px;
+}
+
+.tryagain:hover {
+    background-color: #ADAB54;
+    color: #F3F2EE;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+#overlay {
+    position: absolute;
+    /* background-color: rgba(0,0,0,0.5); */
+    background-color: #ADAB54;
+    background-image: url(images/suit-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+#overlay article {
+    box-sizing: border-box;
+    background-color:#223F61;
+    padding: 20px;
+    width: 50vw;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+#overlay h2 {
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 56px; 
+    animation: jump-shaking 0.83s infinite;
+}
+
+@keyframes jump-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateY(-9px) }
+    35% { transform: translateY(-9px) rotate(17deg) }
+    55% { transform: translateY(-9px) rotate(-17deg) }
+    65% { transform: translateY(-9px) rotate(17deg) }
+    75% { transform: translateY(-9px) rotate(-17deg) }
+    100% { transform: translateY(0) rotate(0) }
+  }
+
+#overlay p {
+    padding-top: 40px;
 }
