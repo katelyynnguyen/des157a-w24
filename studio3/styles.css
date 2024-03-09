@@ -6,7 +6,6 @@ body {
     font-family: 'Merriweather', serif;
     font-weight: 400;
     color: #F3F2EE;
-
 }
 
 #container {
@@ -157,7 +156,7 @@ button:hover {
     font-size: 25px;
 }
 
-#overlay h2 {
+#pWin {
     font-family: 'Atma', sans-serif;
     font-weight: 700;
     font-size: 56px; 
@@ -174,6 +173,43 @@ button:hover {
     100% { transform: translateY(0) rotate(0) }
   }
 
+#dWin {
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    animation: horizontal-shaking 0.35s infinite;
+}
+
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+  }
+
+#tie {
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.2); }
+  }
+
 #overlay p {
     padding-top: 40px;
 }
+
+footer a {
+    text-decoration: none;
+    color: #F3F2EE;
+}
+
+footer {
+    text-align: end;
+}
+
