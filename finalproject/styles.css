@@ -1,0 +1,215 @@
+body {
+    background-color: #ADAB54;
+    background-image: url(images/suit-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    color: #F3F2EE;
+}
+
+#container {
+    width: 1200px;
+    margin: auto;
+}
+
+main {
+    width: 723px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 96px;
+    margin: 40px 0 30px;
+    text-shadow: 2px 2px 10px #272525;
+    animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+section {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.card {
+    height: 150px;
+    width: 100px;
+    background-color: #223F61;
+    border-radius: 10px;
+}
+
+#dCard, #pCard {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    /* margin-top: 20px; */
+    position: relative;
+    top: 5px;
+}
+
+#pCard {
+    margin-top: 125px;
+}
+
+#dealerHand, #playerHand {
+    display: flex;
+    gap: 25px;
+    /* justify-content: center; */
+    position: absolute;
+    left: 665px;
+    top: 346.5px;
+    z-index: 1;
+}
+
+#playerHand {
+    top: 682.5px;
+}
+
+#dealerScore, #playerScore {
+    display: flex;
+    padding-right: 50px;
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    text-shadow: 2px 2px 10px #272525;
+}
+
+button {
+    position: relative;
+    top: 65px;
+    left: 41.95%;
+    font-family: 'Atma', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    background-color: #F3F2EE;
+    border-style: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: #223F61;
+    box-shadow: 2px 4px 10px #272525;
+}
+
+button:hover {
+    color: #F3F2EE;
+    background-color: #223F61;
+}
+
+.tryagain {
+    position: relative;
+    top: 600px;
+    left: 745px;
+}
+
+.tryagain:hover {
+    background-color: #ADAB54;
+    color: #F3F2EE;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+#overlay {
+    position: absolute;
+    /* background-color: rgba(0,0,0,0.5); */
+    background-color: #ADAB54;
+    background-image: url(images/suit-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+#overlay article {
+    box-sizing: border-box;
+    background-color:#223F61;
+    padding: 20px;
+    width: 50vw;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+#pWin {
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 56px; 
+    animation: jump-shaking 0.83s infinite;
+}
+
+@keyframes jump-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateY(-9px) }
+    35% { transform: translateY(-9px) rotate(17deg) }
+    55% { transform: translateY(-9px) rotate(-17deg) }
+    65% { transform: translateY(-9px) rotate(17deg) }
+    75% { transform: translateY(-9px) rotate(-17deg) }
+    100% { transform: translateY(0) rotate(0) }
+  }
+
+#dWin {
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    animation: horizontal-shaking 0.35s infinite;
+}
+
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+  }
+
+#tie {
+    font-family: 'Atma', sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    animation: pulse 1s infinite ease-in-out alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.2); }
+  }
+
+#overlay p {
+    padding-top: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #F3F2EE;
+}
+
+footer {
+    text-align: end;
+}
+
