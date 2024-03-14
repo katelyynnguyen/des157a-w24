@@ -55,13 +55,23 @@
         event.preventDefault();
         
         // Display dealer and player hands
-        dealerHand.innerHTML = `<img src="${gameData.answer[0]}" alt="card"> <img src="${gameData.answer[1]}" alt="card"> <img src="${gameData.answer[2]}" alt="card">`;
+        dealerHand.innerHTML += `
+        <div id="dCard">
+            <div><img src="${gameData.answer[0]}" alt="card"></div>  
+            <div><img src="${gameData.answer[1]}" alt="card"></div>
+            <div><img src="${gameData.answer[2]}" alt="card"></div> 
+        </div>`;
         
-        playerHand.innerHTML = `<img src="${gameData.answer[3]}" alt="card"> <img src="${gameData.answer[4]}" alt="card"> <img src="${gameData.answer[5]}" alt="card">`;
+        playerHand.innerHTML += `        
+        <div id="pCard">
+            <div><img src="${gameData.answer[3]}" alt="card"></div>  
+            <div><img src="${gameData.answer[4]}" alt="card"></div>
+            <div><img src="${gameData.answer[5]}" alt="card"></div> 
+        </div>`;
 
         // Update scores and display results
-        dealerScore.innerHTML += gameData.score[0];
-        playerScore.innerHTML += gameData.score[1];
+        dealerScore.innerHTML += `<br>${gameData.score[0]}`;
+        playerScore.innerHTML += `<br>${gameData.score[1]}`;
 
         // Show overlay after 2 seconds
         setTimeout(function(){
