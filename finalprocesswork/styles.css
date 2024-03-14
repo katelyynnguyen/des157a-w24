@@ -1,0 +1,155 @@
+body {
+    background-color: #ECECEA;
+    font-family: 'Karla', sans-serif;
+    font-weight: 500;
+}
+
+header {
+    display: flex;
+    padding: 50px 62.5px 20px 50px;
+    border-bottom-style: solid;
+    border-bottom-color: #231804;
+    border-bottom-width: 2px;
+    margin: 0 55px;
+    text-align: center;
+}
+
+#logo {
+    background-color: #BDC3D9;
+    padding: 0 25px;
+    border-radius: 50px;
+    animation: color 18s infinite linear;
+}
+
+#logo a {
+    text-decoration: none;
+    color: #231804;
+}
+
+@keyframes color {
+    0% {
+        background-color: #BDC3D9;
+    }
+    20% {
+        background-color: #C7D8E8;
+    }
+    40% {
+        background-color: #D4C66D;
+    }
+    60% {
+        background-color: #F1BB51;
+    }
+    80% {
+        background-color: #CE7134;
+    }
+    100% {
+        background-color: #BDC3D9;
+    }
+}
+
+h1, h2 {
+    font-family: "Abril Fatface", serif;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+main {
+    max-width: 1075px;
+    padding: 40px 62.5px 40px 62.5px;
+}
+
+#bodyContent {
+    display: flex;
+}
+
+section {
+    padding: 0px 150px;
+    line-height: 38px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 26px;
+    /* padding-top: 50px; */
+}
+
+a {
+    text-decoration: none;
+    color: #CE7134;
+}
+
+article {
+    padding: 30px 50px 50px;
+    margin-bottom: 40px;
+}
+
+#miniP {
+    width: 1000px;
+    margin-left: 409px;
+}
+
+#content {
+    display: flex;
+}
+
+.green {
+    text-align: center;
+    background-color: #D4C66D;
+    padding: 50px;
+    border-radius: 20px;
+    border-top-left-radius: 150px;
+}
+
+.bluegray {
+    text-align: center;
+    background-color: #BDC3D9;
+    padding: 50px;
+    border-radius: 20px;
+    border-top-right-radius: 150px;
+}
+
+.yellow {
+    text-align: center;
+    background-color: #F1BB51;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.blue {
+    text-align: center;
+    background-color:#C7D8E8;
+    padding: 50px;
+    border-radius: 20px;
+    border-bottom-right-radius: 150px;
+}
+
+.orange {
+    text-align: center;
+    background-color: #CE7134;
+    padding: 50px;
+    border-radius: 60px;
+}
+
+time {
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0px 40px;
+}
+
+footer {
+    display: flex;
+    justify-content:space-between;
+    padding: 20px 62.5px;
+    border-top-style: solid;
+    border-top-color: #231804;
+    border-top-width: 2px;
+    margin: 0 55px;
+}
+
+footer a {
+    text-decoration: none;
+    color:#231804;
+}
+
+
