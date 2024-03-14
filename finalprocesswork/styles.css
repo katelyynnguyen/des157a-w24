@@ -80,12 +80,13 @@ a {
 
 article {
     padding: 30px 50px 50px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 
 #miniP {
     width: 1000px;
     margin-left: 409px;
+    padding-top: 0px;
 }
 
 #content {
