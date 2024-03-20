@@ -2,14 +2,17 @@
     'use strict';
     console.log("reading js");
 
+
     // Selecting DOM elements
-    const startGame = document.querySelector('#startgame');
-    const dealerHand = document.querySelector('#dealerHand');
-    const playerHand = document.querySelector('#playerHand');
+    const play = document.querySelector('.play');
+    const draw = document.querySelector('#draw');
+    const dealerHand = document.querySelector('#dCard');
+    const playerHand = document.querySelector('#pCard');
     const dealerScore = document.querySelector('#dealerScore');
     const playerScore = document.querySelector('#playerScore');
-    const btnSound = new Audio('sounds/button-3.mp3');
+    const btnSound = new Audio('sounds/button-21.mp3');
     const winSound = new Audio('sounds/applause6.mp3');
+
 
     // Game data object to store relevant information
     const gameData = {
@@ -50,19 +53,22 @@
     setValues();
     console.log(gameData.values);
 
-    // Event listener for the 'Start Game' button
-    startGame.addEventListener('click', function(event){
+    // Start game and reveal instructions
+
+
+    // Event listener for the 'DRAW' button
+    draw.addEventListener('click', function(event){
         event.preventDefault();
         
         // Display dealer and player hands
-        dealerHand.innerHTML += `
+        dealerHand.innerHTML = `
         <div id="dCard">
-            <div><img src="${gameData.answer[0]}" alt="card"></div>  
-            <div><img src="${gameData.answer[1]}" alt="card"></div>
-            <div><img src="${gameData.answer[2]}" alt="card"></div> 
+            <div class="card"><img src="${gameData.answer[0]}" alt="card"></div>  
+            <div class="card"><img src="${gameData.answer[1]}" alt="card"></div>
+            <div class="card"><img src="${gameData.answer[2]}" alt="card"></div> 
         </div>`;
         
-        playerHand.innerHTML += `        
+        playerHand.innerHTML = `        
         <div id="pCard">
             <div><img src="${gameData.answer[3]}" alt="card"></div>  
             <div><img src="${gameData.answer[4]}" alt="card"></div>
@@ -70,30 +76,53 @@
         </div>`;
 
         // Update scores and display results
-        dealerScore.innerHTML += `<br>${gameData.score[0]}`;
-        playerScore.innerHTML += `<br>${gameData.score[1]}`;
+        dealerScore.innerHTML += `${gameData.score[0]}`;
+        playerScore.innerHTML += `${gameData.score[1]}`;
 
         // Show overlay after 2 seconds
         setTimeout(function(){
             document.querySelector('#overlay').className = "showing";
-            winSound.play();
         }, 2000);
 
-
     });
+   
 
-    startGame.addEventListener('mousedown', function(){
+    draw.addEventListener('mousedown', function(){
         // Button sound effect
         btnSound.play();
     })
 
 
-    // Event listener for the 'Try Again' button
-    document.querySelector('.tryagain').addEventListener('click', function(event){
+    const info = document.querySelector('.info');
+
+    info.addEventListener('click', function(event){
         event.preventDefault();
-        // Hide overlay and reload the page
-        document.querySelector('#overlay').className = "hidden";
-        location.reload();
+        document.querySelector('#instructions').className = "showing";
+    })
+
+    //Hide instructions overlay
+    play.addEventListener('click', function(event){
+        event.preventDefault();
+        document.querySelector('#instructions').className = "hidden";
+    })
+
+    document.addEventListener('click', function(event) {
+        if (event.target.classList.contains('clap')) {
+            // Play winSound when element with class 'clap' is clicked
+            winSound.play();
+        }
+    });
+    
+
+    // Event listener for the 'Try Again' button
+    document.addEventListener('click', function(event){
+        if (event.target.classList.contains('tryagain')){
+            event.preventDefault();
+            // Hide overlay and reload the page
+            document.querySelector('#overlay').className = "hidden";
+            location.reload();
+        }
+
     });
 
     // Event listener for the 'Escape' key
@@ -101,6 +130,7 @@
         if (event.key === 'Escape'){
             // Hide overlay when 'Escape' key is pressed
             document.getElementById('overlay').className= "hidden";
+            document.querySelector('#instructions').className = "hidden";
         }
     })
 
@@ -109,19 +139,36 @@
         addUpScores()
         if (gameData.score[0] > gameData.score[1]) {
             if (gameData.score[0] === 100) {
-                document.querySelector('#announce').innerHTML += `<h2 id="pWin">JACKPOT</h2><p>DEALER hit the jackpot</p>`;
+                document.querySelector('.announce').innerHTML += `<h2 id="dWin">JACKPOT</h2><p>DEALER hit the jackpot</p>`;
+                document.querySelector('.announce').innerHTML += `<button class="tryagain win">TRY AGAIN!</button>`;
+                document.querySelector('.announce').className = 'yellow';
+                
             } else {
-                document.querySelector('#announce').innerHTML += `<h2 id="dWin">LOSER:</h2><p>DEALER wins with ${gameData.score[0]}</p>`;
+                document.querySelector('.announce').innerHTML += `<h2 id="dWin">LOSER:</h2><p>DEALER wins with ${gameData.score[0]}</p>`;
+                document.querySelector('.announce').innerHTML += `<button class="tryagain">TRY AGAIN!</button>`;
+                document.querySelector('.announce').innerHTML += `<img src="images/cloud.png" alt="cloud" id="cloud1">`;
+                document.querySelector('.announce').innerHTML += `<img src="images/cloud.png" alt="cloud" id="cloud2">`;
+                document.querySelector('.announce').className = 'red';
             }
         } else if (gameData.score[1] > gameData.score[0]) {
+            winSound.play();
             if (gameData.score[1] === 100) {
-                document.querySelector('#announce').innerHTML += `<h2 id="pWin">JACKPOT</h2><p>PLAYER hit the jackpot</p>`;
+                document.querySelector('.announce').innerHTML += `<h2 id="pWin">JACKPOT</h2><p>PLAYER hit the jackpot</p>`;
+                document.querySelector('.announce').innerHTML += `<button class="tryagain win clap">TRY AGAIN!</button>`;
+                document.querySelector('.announce').className = 'yellow';
             } else {
-                document.querySelector('#announce').innerHTML += `<h2 id="pWin">WINNER:</h2><p>PLAYER wins with ${gameData.score[1]}</p>`;                
+                document.querySelector('.announce').innerHTML += `<h2 id="pWin">WINNER:</h2><p>PLAYER wins with ${gameData.score[1]}</p>`; 
+                document.querySelector('.announce').innerHTML += `<button class="tryagain win clap">TRY AGAIN!</button>`;
+                document.querySelector('.announce').innerHTML += `<img src="images/coin.png" alt="coin" width="73" height="73" id="coin1">`; 
+                document.querySelector('.announce').innerHTML += `<img src="images/coin.png" alt="coin" width="73" height="73" id="coin2">`;    
+                document.querySelector('.announce').className = 'yellow';   
             }
 
         } else { 
-            document.querySelector('#announce').innerHTML += `<h2 id="tie">TIE:</h2><p>DEALER and PLAYER tie with ${gameData.score[1]}</p>`;
+            document.querySelector('.announce').innerHTML += `<h2 id="tie">TIE:</h2><p>DEALER and PLAYER tie with ${gameData.score[1]}</p>`;
+            document.querySelector('.announce').innerHTML += `<button class="tryagain">TRY AGAIN!</button>`;
+            document.querySelector('.announce').innerHTML += `<img src="images/tassle.gif" alt="tassle" width="117" height="147" class="tassle">`;
+            document.querySelector('.announce').className = 'red';
         }
     }
 

@@ -7,30 +7,45 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@700&family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
     <title>game on!</title>
     <script src="script.js" defer></script>
 
 </head>
 <body id="container">
-    <header>
-        <h1>lucky 9</h1>
-    </header>
+    
+    <div id="head">
+        <a href="landing.html" id="home"><h2>home</h2></a>
+        <header>
+            <h1>lucky 9</h1>
+        </header>   
+        <img src="images/info.png" alt="question mark" width="45" height="50" class="info">
+    </div>
+
+    <audio controls autoplay loop hidden>
+        <source src="sounds/chinese-new-year-180176.mp3" type="audio/mp3">
+    </audio>
 
     <main>
-        <section>
-        <p>
-            Each player is dealt 3 cards. The object of the game is beat the dealer with a higher valued hand as close to 9 as possible. Tens and face cards are worth 0 points, aces are worth 1 point, and 2 - 9 are scored at face value. Hands are valued as the last digit of their sum. 
-        </p>
+        <section id="instructions" class="hidden">
+            <article>
+                <h2>HOW TO PLAY:</h2>
+                <p>
+                    Each player is dealt 3 cards. The object of the game is beat the dealer with a higher valued hand as close to 9 as possible. <strong>Tens and face cards are worth 0 points, aces are worth 1 point, and 2 - 9 are scored at face value.</strong> Hands are valued as the last digit of their sum. 
+                </p><br>
 
-        <p>
-            Note: If you get a hand with 3 face cards, you’ve hit the jackpot and that’s an automatic win. (woohoo!)
-        </p>
+                <p>
+                    <strong>Note:</strong> If you get a hand with 3 face cards, you’ve hit the jackpot and that’s an automatic win. (woohoo!)
+                </p>
+            </article>
+            <a href="index.html"><button class="play">LET'S PLAY</button></a>
         </section>
 
-        <div id="dealerHand"></div>
-        <div id="dealerScore">dealer:  </div>
+        <div id="dScore">
+            <p>dealer:</p>  
+            <p id="dealerScore"></p>
+        </div>
         <div id="dCard">
             <div class="card"></div>  
             <div class="card"></div>
@@ -38,26 +53,28 @@
         </div>
 
         <div>
-            <button id="startgame">START</button>            
+            <button id="draw">DRAW</button>            
         </div>
 
-
-        <div id="playerHand"></div>
+        <div id="pScore">
+            <p>player:</p>  
+            <p id="playerScore"></p>
+        </div>
         <div id="pCard">
             <div class="card"></div>  
             <div class="card"></div>
             <div class="card"></div> 
         </div>
 
-        <div id="playerScore">player:  </div>
+
     </main>
 
     <section id="overlay" class="hidden">
-        <article id="announce">
-            <h2></h2>
+        <article class="announce">
         </article>
-        <button class="tryagain">TRY AGAIN!</button>
+
     </section>
+
 
     <footer>
         <strong><a href="sources.html">sources</a></strong>

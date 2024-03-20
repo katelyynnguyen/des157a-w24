@@ -1,16 +1,32 @@
+img {
+    display: block; /* inline is not useful, generally */
+    max-width: 100%; /* keeps images from overrunning their containers */
+    /* height: auto; makes sure images maintain their proportion and don't get stretched */
+}
+
 body {
-    background-color: #ADAB54;
-    background-image: url(images/suit-background.png);
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #94251E;
+    background-image: url(images/suit-background2.png);
     font-family: 'Merriweather', serif;
     font-weight: 400;
     color: #F3F2EE;
 }
 
+
 #container {
     width: 1200px;
     margin: auto;
+}
+
+.info{
+    display: block;
+    /* padding-top: 40px; */
+    margin-top: 40px;
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
 }
 
 main {
@@ -23,7 +39,7 @@ h1 {
     font-family: 'Atma', sans-serif;
     font-weight: 700;
     font-size: 96px;
-    margin: 40px 0 30px;
+    margin: 40px 0 20px;
     text-shadow: 2px 2px 10px #272525;
     animation: bounce 2s ease infinite;
 }
@@ -34,6 +50,22 @@ h1 {
     60% {transform: translateY(-15px);}
 }
 
+#landingtitle {
+    margin-top: 0px;
+}
+
+#landingimage {
+    margin: auto;
+    padding-top: 200px;
+}
+
+#home {
+    text-decoration: none;
+    color: #F3F2EE;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
 section {
     font-weight: 400;
     font-size: 16px;
@@ -42,7 +74,7 @@ section {
 .card {
     height: 150px;
     width: 100px;
-    background-color: #223F61;
+    background-color: #742520;
     border-radius: 10px;
 }
 
@@ -50,36 +82,34 @@ section {
     display: flex;
     gap: 25px;
     justify-content: center;
-    /* margin-top: 20px; */
-    position: relative;
-    top: 5px;
+    /* position: relative;
+    top: 5px; */
 }
 
-#pCard {
-    margin-top: 125px;
-}
 
-#dealerHand, #playerHand {
-    display: flex;
-    gap: 25px;
-    /* justify-content: center; */
-    position: absolute;
-    left: 665px;
-    top: 346.5px;
-    z-index: 1;
-}
-
-#playerHand {
-    top: 682.5px;
-}
-
-#dealerScore, #playerScore {
-    display: flex;
-    padding-right: 50px;
+#dScore, #pScore {
+    display: inline-block;
+    /* padding-right: 50px; */
     font-family: 'Atma', sans-serif;
     font-weight: 700;
     font-size: 35px;
     text-shadow: 2px 2px 10px #272525;
+}
+
+
+#dScore p, #pScore p {
+    margin: 10px 0;
+}
+
+#pScore {
+    margin-top: 60px;
+}
+
+#dealerScore, #playerScore {
+    font-size: 50px;
+    margin: 0px;
+    padding: 0;
+    text-align: center;
 }
 
 button {
@@ -89,28 +119,79 @@ button {
     font-family: 'Atma', sans-serif;
     font-size: 32px;
     font-weight: 700;
-    background-color: #F3F2EE;
+    background-color: #FCA83E;
     border-style: none;
     padding: 12px;
     border-radius: 10px;
-    color: #223F61;
+    color: #F3F2EE;
     box-shadow: 2px 4px 10px #272525;
 }
 
 button:hover {
-    color: #F3F2EE;
-    background-color: #223F61;
+    color: #FCA83E;
+    background-color: #742520;
 }
 
+#start {
+    top: 50%;
+    left: 46%;
+    animation: glowing 1500ms infinite;
+}
+  
+  @keyframes glowing {
+    0% { background-color: #FCA83E; -webkit-box-shadow: 0 0 3px #FCA83E; }
+    50% { background-color: #FC993E; -webkit-box-shadow: 0 0 10px #FC993E; }
+    100% { background-color: #FCA83E; -webkit-box-shadow: 0 0 3px #FCA83E; }
+  }
+
+  #start:hover {
+    animation: none;
+  }
+
 .tryagain {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 196px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+}
+
+.play {
+    color: #742520;
+    background-color: #F3F2EE;
     position: relative;
-    top: 600px;
+    top: 575px;
     left: 745px;
 }
 
-.tryagain:hover {
-    background-color: #ADAB54;
+.play:hover {
     color: #F3F2EE;
+    background-color: #742520;
+}
+
+.playBtn {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Atma', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    border-style: none;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px #272525;
+    text-decoration: none;
+    background-color: #F3F2EE;
+    color: #742520;
+    width: 180px;
+    height: 40px;
+}
+
+.tryagain:hover {
+    background-color: #742520;
+    color: #FCA83E;
 }
 
 .hidden {
@@ -125,11 +206,6 @@ button:hover {
 
 #overlay {
     position: absolute;
-    /* background-color: rgba(0,0,0,0.5); */
-    background-color: #ADAB54;
-    background-image: url(images/suit-background.png);
-    background-repeat: no-repeat;
-    background-position: center;
     top: 0;
     left: 0;
     z-index: 1;
@@ -141,19 +217,118 @@ button:hover {
 }
 
 #overlay article {
+    overflow: hidden;
     box-sizing: border-box;
-    background-color:#223F61;
+    border-radius: 20px;
     padding: 20px;
-    width: 50vw;
+    width: 45vw;
     height: 60vh;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
     font-family: 'Merriweather', serif;
     font-weight: 400;
     font-size: 25px;
+    text-align: center;
+}
+
+#instructions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+#instructions article {
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color:#FCA83E;
+    color: #742520;
+    padding: 20px;
+    width: 45vw;
+    height: 60vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-size: 16px;
+    justify-content: center;
+}
+
+#instructions h2 {
+    font-family: 'Atma', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    padding: 15px;
+}
+
+#instructions p{
+    width: 30vw;
+    margin: auto;
+    line-height: 1.3rem;
+}
+
+.win {
+    background-color: #F3F2EE;
+    color: #742520;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 196px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+}
+
+.yellow {
+    background-color:#FCA83E;
+    color: #742520; 
+}
+
+#coin1 {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+
+#coin2 {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+} 
+
+.tassle {
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    transform: rotate(15deg);
+}
+
+.red {
+    background-color: #742520;
+    color: #F3F2EE;
+}
+
+#cloud1 {
+    overflow: hidden;
+    position: absolute;
+    top: 30%;
+    left: -5%;
+}
+
+#cloud2 {
+    overflow: hidden;
+    position: absolute;
+    top: 10%;
+    right: -5%;
 }
 
 #pWin {
@@ -204,6 +379,7 @@ button:hover {
     padding-top: 40px;
 }
 
+
 footer a {
     text-decoration: none;
     color: #F3F2EE;
@@ -211,5 +387,13 @@ footer a {
 
 footer {
     text-align: end;
+}
+
+audio{
+    display:block;
+    border-radius: 100px;
+    position: absolute;
+    top:100%;
+    left: 4%;
 }
 
